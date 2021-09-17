@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ParcijalniIspit</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="detalji_o_podsjetniku">Detalji o podsjetniku</string>
+    <string name="naziv_podsjetnika">Naziv podsjetnika</string>
+    <string name="spremi">Spremi</string>
+</resources>

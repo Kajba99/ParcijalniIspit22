@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/rowLayout"
+    android:padding="15dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+    <TextView
+        tools:text="NAZIV "
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:id="@+id/textViewNaziv"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"/>
+
+    <TextView
+        tools:text="DETALJ"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:layout_marginTop="5dp"
+        android:id="@+id/textViewDetalj"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
+
+
+</LinearLayout>
