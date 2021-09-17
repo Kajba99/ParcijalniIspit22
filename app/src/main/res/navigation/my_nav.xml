@@ -9,5 +9,9 @@
         android:id="@+id/mainFragment"
         android:name="com.example.parcijalniispit.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main" >
+        <argument
+            android:name="currentUser"
+            app:argType="com.example.parcijalniispit.model.User" />
+    </fragment>
 </navigation>

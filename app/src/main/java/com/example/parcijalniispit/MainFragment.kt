@@ -3,10 +3,8 @@ package com.example.parcijalniispit
 import android.app.AlertDialog
 import android.os.Bundle
 import android.text.TextUtils
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -20,6 +18,7 @@ import kotlinx.android.synthetic.main.fragment_main.view.*
 
 class MainFragment : Fragment() {
 
+    private val args by navArgs<MainFragmentArgs>()
     private lateinit var mUserViewModel: ViewModel
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -73,6 +72,27 @@ class MainFragment : Fragment() {
 
     }
 
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.delete_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.menu_delete){
+            deleteUser()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun deleteUser() {
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setPositiveButton("yes") { _, _ ->
+            mUserViewModel.deleteUser(args.currentUser)
+            Toast.makeText(requireContext(), "Successfully deleted: ${args.currentUser.naziv}" , Toast.LENGTH_LONG).show()
+        }
+        builder.setNegativeButton("No"){ _, _ ->}
+        builder.setMessage("Are you sure you want to delete ${args.currentUser.detalj}?")
+        builder.create().show()
+    }
 
 
 
